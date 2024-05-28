@@ -36,14 +36,14 @@ class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _searchController = TextEditingController();
 
   List<Product> coffeeProducts = [
-    Product(name: 'Espresso', image: 'espresso.jpg', price: 2.99),
-    Product(name: 'Cappuccino', image: 'cappuccino.jpg', price: 3.99),
-    Product(name: 'Latte', image: 'latte.jpg', price: 4.49),
-    Product(name: 'Americano', image: 'americano.jpg', price: 2.49),
-    Product(name: 'Mocha', image: 'mocha.jpg', price: 4.99),
-    Product(name: 'Macchiato', image: 'macchiato.jpg', price: 3.79),
-    Product(name: 'Flat White', image: 'flat_white.jpg', price: 3.29),
-    Product(name: 'Irish Coffee', image: 'irish_coffee.jpg', price: 5.99),
+    Product(name: 'Espresso', image: 'Espresso.png', price: 2.99),
+    Product(name: 'Cappuccino', image: 'Capuccino.png', price: 3.99),
+    Product(name: 'latte', image: 'latte.png', price: 4.49),
+    Product(name: 'americano', image: 'americano.png', price: 2.49),
+    Product(name: 'Pastries', image: 'pastries.png', price: 4.99),
+    Product(name: 'Smoothie', image: 'smoothie.png', price: 3.79),
+    Product(name: 'Tea', image: 'tea.png', price: 3.29),
+    Product(name: 'Hot Chocolate', image: 'hotchocolate.png', price: 5.99),
   ];
 
   List<Product> displayedProducts = [];

@@ -38,7 +38,7 @@ class ProductItem extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.asset(
-                  'assets/${product.image}',
+                  'assets/images/${product.image}',
                   fit: BoxFit.cover,
                 ),
               ),
