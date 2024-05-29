@@ -1,29 +1,10 @@
-import 'package:shoppy/pages/cart.dart';
-import 'package:shoppy/pages/productItem.dart';
-import 'package:shoppy/pages/profile.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Shopeasy',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: const Color(0xFFF5F5DC),
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
-    );
-  }
-}
+import 'package:provider/provider.dart';
+import 'package:shoppy/pages/cart.dart';
+import 'package:shoppy/pages/cart_provider.dart';
+import 'package:shoppy/pages/profile.dart';
+import 'package:shoppy/pages/productitem.dart';
+import 'package:shoppy/models/product.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -38,8 +19,8 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Product> coffeeProducts = [
     Product(name: 'Espresso', image: 'Espresso.png', price: 2.99),
     Product(name: 'Cappuccino', image: 'Capuccino.png', price: 3.99),
-    Product(name: 'latte', image: 'latte.png', price: 4.49),
-    Product(name: 'americano', image: 'americano.png', price: 2.49),
+    Product(name: 'Latte', image: 'latte.png', price: 4.49),
+    Product(name: 'Americano', image: 'americano.png', price: 2.49),
     Product(name: 'Pastries', image: 'pastries.png', price: 4.99),
     Product(name: 'Smoothie', image: 'smoothie.png', price: 3.79),
     Product(name: 'Tea', image: 'tea.png', price: 3.29),
@@ -136,6 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _addToCart(BuildContext context, Product product) {
+    Provider.of<CartProvider>(context, listen: false).addToCart(product);
     showDialog(
       context: context,
       builder: (BuildContext context) {

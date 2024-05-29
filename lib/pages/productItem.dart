@@ -1,16 +1,5 @@
 import 'package:flutter/material.dart';
-
-class Product {
-  final String name;
-  final String image;
-  final double price;
-
-  Product({
-    required this.name,
-    required this.image,
-    required this.price,
-  });
-}
+import 'package:shoppy/models/product.dart';
 
 class ProductItem extends StatelessWidget {
   final Product product;
@@ -43,22 +32,22 @@ class ProductItem extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
             Text(
               product.name,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
             Text(
-              '\$${product.price}',
-              style: TextStyle(color: Colors.grey),
+              '\$${product.price.toStringAsFixed(2)}',
+              style: const TextStyle(color: Colors.grey),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             ElevatedButton(
               onPressed: () => onAddToCart(product),
-              child: Text('Add to Cart'),
+              child: const Text('Add to Cart'),
             ),
           ],
         ),
@@ -66,3 +55,4 @@ class ProductItem extends StatelessWidget {
     );
   }
 }
+
